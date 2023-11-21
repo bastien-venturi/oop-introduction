@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 class Beverage {
 
-    private $name;
-    private $color;
-    private $price;
-    private $temperature;
+    protected $name;
+    protected $color;
+    protected $price;
+    protected $temperature;
 
     public function __construct(string $name, string $color, float $price, string $temperature = "cold") {
         $this->name = $name;
@@ -50,9 +50,9 @@ class Beer extends Beverage {
         return $this->alcoholpercentage . "%";
     }
 
-    public function getInfo() {
-        parent::getInfo();
-        echo "Hi, I'm " . $this->getName() . " and have an alcohol percentage of " . $this->alcoholpercentage . "% and I have a " . $this->getColor() . " color.";
+    public function getBeerInfo() {
+        echo parent::getInfo();
+        echo "Hi, I'm " . $this->name . " and have an alcohol percentage of " . $this->alcoholpercentage . "% and I have a " . $this->color . " color.";
     }
 }
 
@@ -60,6 +60,4 @@ $duvel = new Beer("Duvel", "blond", 3.5, 8.5);
 $duvel->setColor("light");
 
 echo "Alcohol percentage: " . $duvel->getAlcoholpercentage() . "<br><br>";
-$duvel->getInfo();
-
-?>
+$duvel->getBeerInfo();
