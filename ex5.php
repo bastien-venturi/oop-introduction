@@ -30,10 +30,19 @@ class Beverage
     {
         return $this->price;
     }
+
+    // Method to set a new price
+    public function setPrice(float $newPrice): void
+    {
+        $this->price = $newPrice;
+    }
 }
 
 // Instantiate an object representing cola
-$cola = new Beverage("black", 3.5); // Change the price to 3.5 euro
+$cola = new Beverage("black", 2.0);
+
+// Set a new price for the cola
+$cola->setPrice(3.5);
 
 // Print the getInfo on the screen
 echo $cola->getInfo() . PHP_EOL;
