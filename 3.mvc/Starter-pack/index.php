@@ -14,7 +14,7 @@ require 'Controller/ArticleController.php';
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
-$page = $_GET['page'] ?? null;
+$page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : null;
 
 // Load the controller
 // It will *control* the rest of the work to load the page
