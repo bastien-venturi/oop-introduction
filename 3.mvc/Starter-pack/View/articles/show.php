@@ -1,11 +1,10 @@
 <?php require 'View/includes/header.php'?>
 
-<?php // Use any data loaded in the controller here ?>
-
+<?php var_dump($articles) ?>
 <section>
-    <h1><?= $article->title ?></h1>
-    <p><?= $article->formatPublishDate() ?></p>
-    <p><?= $article->description ?></p>
+    <h1><?= $article->getTitle() ?></h1>
+    <p><?= $article->getpublishDate() ?></p>
+    <p><?= $article->getDescription() ?></p>
 
     <?php // TODO: links to next and previous ?>
     <a href="#">Previous article</a>

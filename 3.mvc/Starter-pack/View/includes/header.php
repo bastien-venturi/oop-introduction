@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        
         <ul>
             <li>
                 <a href="index.php">Home</a>
@@ -17,4 +18,5 @@
                 <a href="index.php?page=articles">Articles</a>
             </li>
         </ul>
+
     </header>
