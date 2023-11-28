@@ -1,14 +1,21 @@
-<?php require 'View/includes/header.php'?>
-
-<?php // Use any data loaded in the controller here ?>
-
-<section>
-    <h1>Articles</h1>
+<!-- View/articles/index.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article List</title>
+</head>
+<body>
+    <h1>Article List</h1>
     <ul>
-        <?php foreach ($articles as $article) : ?>
-            <li><?= $article->title ?> <?= $article->formatPublishDate() ?></li>
+        <?php foreach ($articles as $article): ?>
+            <li>
+                <h2><?= $article->getTitle(); ?></h2>
+                <p><?= $article->getDescription(); ?></p>
+                <p>Published on: <?= $article->getPublishDate(); ?></p>
+            </li>
         <?php endforeach; ?>
     </ul>
-</section>
-
-<?php require 'View/includes/footer.php'?>
+</body>
+</html>

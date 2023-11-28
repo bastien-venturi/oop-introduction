@@ -17,12 +17,29 @@ class Article
 
     public function formatPublishDate($format = 'DD-MM-YYYY')
     {
-        // Utilisation de la classe DateTime pour formater la date
-        if ($this->publishDate !== null) {
-            $timestamp = strtotime($this->publishDate);
-            return date($format, $timestamp);
+        if ($this->publishDate === null) {
+            // Handle the case where the publish date is null
+            return 'Date not available';
         }
-    
-        return null; // ou une valeur par défaut, selon vos besoins
+
+        // Convert the date string to a timestamp
+        $timestamp = strtotime($this->publishDate);
+
+        // Check if date conversion is successful
+        if ($timestamp === false) {
+            return 'Invalid date format';
+        }
+
+        // Format the timestamp according to the specified format
+        $formattedDate = date($format, $timestamp);
+
+        // Return the formatted date
+        return $formattedDate;
     }
 }
+
+
+// // Example usage
+// $article = new Article('Article Title', 'Article Description', '2023-11-28');
+// $formattedDate = $article->formatPublishDate('d-m-Y');
+// echo $formattedDate;
