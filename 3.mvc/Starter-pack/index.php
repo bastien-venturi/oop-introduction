@@ -25,7 +25,7 @@ switch ($page) {
         // $articleController->index();
         (new ArticleController())->index();
         break;
-    case 'articles-show':
+    case 'articles-show'$article->getId();'':
         (new ArticleController())->show();
         break;
     case 'home':

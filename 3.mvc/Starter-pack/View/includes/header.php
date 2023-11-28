@@ -15,7 +15,7 @@
                 <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="index.php?page=articles">Articles</a>
+                <a href="index.php?page=articles-show1">Articles</a>
             </li>
         </ul>
 

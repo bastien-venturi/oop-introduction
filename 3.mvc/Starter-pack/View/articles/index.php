@@ -9,7 +9,6 @@
 <?php require 'View/includes/header.php'?>
 <body>
     <h1>Article List</h1>
-    <!-- <?php var_dump($articles);?> -->
     <ul>
         <?php foreach ($articles as $article): ?>            
             <li>

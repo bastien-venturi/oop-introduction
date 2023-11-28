@@ -6,9 +6,10 @@
 <ul>
     <?php foreach ($articles as $article): ?>            
         <ul>
-            <h2><?= $article->getId();?>. <?= $article->getTitle(); ?></h2>        </ul>
-            <?php endforeach; ?>
+            <h2><a href="index.php?page=articles-show<?= $article->getId();?>"><?= $article->getId();?>. <?= $article->getTitle(); ?></a></h2>        
         </ul>
+            <?php endforeach; ?>
+</ul>
 
 </section>
 
