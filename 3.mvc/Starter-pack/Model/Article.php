@@ -15,10 +15,9 @@ class Article
         $this->publishDate = $publishDate;
     }
 
-    public function formatPublishDate($format = 'DD-MM-YYYY')
+    public function getPublishDateFormatted($format = 'd-m-Y'): ?string
     {
         if ($this->publishDate === null) {
-            // Handle the case where the publish date is null
             return 'Date not available';
         }
 
@@ -35,6 +34,21 @@ class Article
 
         // Return the formatted date
         return $formattedDate;
+    }
+
+    public function getPublishDate(): ?string
+    {
+        return $this->getPublishDateFormatted();
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 }
 

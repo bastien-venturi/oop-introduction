@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article List</title>
 </head>
+
 <body>
     <h1>Article List</h1>
+    <!-- <?php var_dump($articles);?> -->
     <ul>
-        <?php foreach ($articles as $article): ?>
+        <?php foreach ($articles as $article): ?>            
             <li>
                 <h2><?= $article->getTitle(); ?></h2>
                 <p><?= $article->getDescription(); ?></p>
@@ -18,4 +20,5 @@
         <?php endforeach; ?>
     </ul>
 </body>
+
 </html>
