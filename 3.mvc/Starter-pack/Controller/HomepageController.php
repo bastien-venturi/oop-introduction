@@ -6,7 +6,7 @@ class HomepageController
     public function index()
     {
         // TODO: Préparez la connexion à la base de données (vous pouvez utiliser PDO, par exemple)
-        require 'queries/connectDb.php';
+        require './queries/connectDb.php';
         $pdo = connectDb();
         
         // TODO: Remplacez la requête suivante par une requête SQL réelle pour récupérer les articles depuis la base de données

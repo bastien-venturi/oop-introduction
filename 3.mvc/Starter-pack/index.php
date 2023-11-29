@@ -29,6 +29,7 @@ switch ($page) {
         } else {
         // Assuming $article is an instance of Article and you want to show a specific article
         // Replace $article->getId() with the actual article ID you want to show
+        
         header("Location: index.php");
         exit;
         }

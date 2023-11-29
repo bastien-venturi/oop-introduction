@@ -1,8 +1,9 @@
 <?php
 
 declare(strict_types = 1);
+require 'Controller.php';
 
-class ArticleController
+class ArticleController extends Controller
 {
     public function index()
     {
@@ -53,16 +54,16 @@ class ArticleController
         // Load all required data
         $articles = $this->getArticles();
         $articleDetails = $this->getArticleByID($articleId, $articles);
+
         
-        if ($articleDetails === null) {
+        if ($articleDetails === null) 
+        {
             header("Location: index.php");
             exit;
-        // Load the view
-        require 'View/articles/show.php';
-    }
 
-
-    
+        }    
+            // require 'View/articles/show.php';
+            $this->render('articles/show', ['articleDetails' => $articleDetails, 'articleId' => $articleId]);
     }
 }
  
