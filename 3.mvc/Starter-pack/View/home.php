@@ -5,9 +5,9 @@
 
 <ul>
     <?php foreach ($articles as $article): ?>            
-        <ul>
-            <h2><a href="index.php?page=articles-show<?= $article->getId();?>"><?= $article->getId();?>. <?= $article->getTitle(); ?></a></h2>        
-        </ul>
+        <li>
+            <h2><a href="index.php?page=articles-show&id=<?= $article->getId();?>"><?= $article->getId();?>. <?= $article->getTitle(); ?></a></h2>        
+        </li>
             <?php endforeach; ?>
 </ul>
 

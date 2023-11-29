@@ -1,10 +1,7 @@
 <?php
 
-
-
 function connectDb()
 {
-
 
     //Chemin vers le fichier .env
     $envFile = __DIR__ . '/../.idea/.env';

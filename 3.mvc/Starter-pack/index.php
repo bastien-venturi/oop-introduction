@@ -20,13 +20,18 @@ $page = $_GET['page'] ?? null;
 // It will *control* the rest of the work to load the page
 switch ($page) {
     case 'articles-index':
-        // This is shorthand for:
-        // $articleController = new ArticleController;
-        // $articleController->index();
         (new ArticleController())->index();
         break;
-    case 'articles-show'$article->getId();'':
-        (new ArticleController())->show();
+    case 'articles-show':
+        $articleId = $_GET['id'] ?? null;
+        if ($articleId !== null && is_numeric($articleId)) {
+            (new ArticleController())->show((int)$articleId);
+        } else {
+        // Assuming $article is an instance of Article and you want to show a specific article
+        // Replace $article->getId() with the actual article ID you want to show
+        header("Location: index.php");
+        exit;
+        }
         break;
     case 'home':
     default:
