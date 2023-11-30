@@ -63,9 +63,3 @@ class Article
         return $this->author;
     }
 }
-
-
-// // Example usage
-// $article = new Article('Article Title', 'Article Description', '2023-11-28');
-// $formattedDate = $article->formatPublishDate('d-m-Y');
-// echo $formattedDate;

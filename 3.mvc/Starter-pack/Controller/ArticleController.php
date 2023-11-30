@@ -10,10 +10,10 @@ class ArticleController extends Controller
         // Load all required data
         $articles = $this->getArticles();
 
-        
-
         // Load the view
-        require 'View/articles/index.php';
+        // require 'View/articles/index.php';
+        $this->render('articles/index', ['articles' => $articles]);
+
     }
 
     // Note: this function can also be used in a repository - the choice is yours
@@ -64,6 +64,22 @@ class ArticleController extends Controller
         }    
             // require 'View/articles/show.php';
             $this->render('articles/show', ['articleDetails' => $articleDetails, 'articleId' => $articleId]);
+    }
+
+    public function showByAuthor($authorName)
+    {
+        // Load all required data
+        $articles = $this->getArticles();
+        $authorDetails = $this->getArticleByAuthor($authorName, $articles);
+
+        if ($authorDetails === null) 
+        {
+            header("Location: index.php");
+            exit;
+
+        }    
+            // require 'View/articles/author.php';
+            $this->render('articles/author', ['articleDetails' => $authorDetails, 'authorName' => $authorName]);
     }
 }
  

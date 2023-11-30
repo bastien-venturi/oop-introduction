@@ -17,6 +17,10 @@
             <li>
                 <a href="index.php?page=articles-index">Articles</a>
             </li>
+            <li>
+                <a href="index.php?page=articles-authors">Authors</a>
+            </li>
+
         </ul>
 
     </header>

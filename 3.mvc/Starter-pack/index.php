@@ -11,6 +11,7 @@ require 'Model/Article.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
+require 'Controller/AuthorController.php';  
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
@@ -22,6 +23,7 @@ switch ($page) {
     case 'articles-index':
         (new ArticleController())->index();
         break;
+
     case 'articles-show':
         $articleId = $_GET['id'] ?? null;
         if ($articleId !== null && is_numeric($articleId)) {
@@ -29,11 +31,27 @@ switch ($page) {
         } else {
         // Assuming $article is an instance of Article and you want to show a specific article
         // Replace $article->getId() with the actual article ID you want to show
-        
         header("Location: index.php");
         exit;
         }
         break;
+
+    case 'articles-authors':
+        
+        (new AuthorController())->index();
+        break;
+        
+
+    case 'articles-authors':
+        $authorName = $_GET['author'] ?? null;
+        if ($authorName !== null) {
+            (new ArticleController())->showByAuthor($authorName);
+        } else {
+            header("Location: index.php");
+            exit;
+        }
+        break;
+
     case 'home':
     default:
         (new HomepageController())->index();
