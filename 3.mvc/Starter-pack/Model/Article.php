@@ -8,13 +8,15 @@ class Article
     public string $title;
     public ?string $description;
     public ?string $publishDate;
+    public string $author;
 
-    public function __construct(int $id, string $title, ?string $description, ?string $publishDate)
+    public function __construct(int $id, string $title, ?string $description, ?string $publishDate, string $author)
     {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->publishDate = $publishDate;
+        $this->author = $author;
     }
 
     public function getPublishDateFormatted($format = 'd-m-Y'): ?string
@@ -55,6 +57,10 @@ class Article
     public function getId(): int
     {
         return $this->id;
+    }
+    public function getAuthor(): string
+    {
+        return $this->author;
     }
 }
 

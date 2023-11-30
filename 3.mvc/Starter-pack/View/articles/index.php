@@ -13,6 +13,7 @@
         <?php foreach ($articles as $article): ?>            
             <li>
                 <h2><?= $article->getId();?>. <?= $article->getTitle(); ?></h2>
+                <p>By: <?= $article->getAuthor();?></p>
                 <p><?= $article->getDescription(); ?></p>
                 <p>Published on: <?= $article->getPublishDate(); ?></p>
             </li>
