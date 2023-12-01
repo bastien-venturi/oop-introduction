@@ -37,16 +37,25 @@ switch ($page) {
         break;
 
     case 'articles-authors':
-        
         (new AuthorController())->index();
         break;
-        
 
     case 'articles-authors':
         $authorName = $_GET['author'] ?? null;
         if ($authorName !== null) {
-            (new ArticleController())->showByAuthor($authorName);
+            (new AuthorController())->showByAuthor($authorName);
         } else {
+            header("Location: index.php");
+            exit;
+        }
+        break;
+
+    case 'articles-authors&authors=?'
+    $articleId = $_GET['id'] ?? null;
+    $authorName = $_GET['author'] ?? null;
+    if ($articleId !== null && is_numeric($articleId) && $authorName !== null) {
+        (new ArticleController())->show((int)$articleId);
+    } else {
             header("Location: index.php");
             exit;
         }

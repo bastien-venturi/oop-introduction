@@ -12,8 +12,8 @@
         <?php endforeach; ?>
     </ul>
 
-    <a href="index.php?page=articles-show&id=<?= $authorDetails->getId()-1;?>">Previous article</a>
-    <a href="index.php?page=articles-show&id=<?= $authorDetails->getId()+1;?>">Next article</a>
+    <a href="index.php?page=articles-show&authors=<?= $authorDetails->getId()-1;?>">Previous article</a>
+    <a href="index.php?page=articles-show&authors=<?= $authorDetails->getId()+1;?>">Next article</a>
 
 </section>
 

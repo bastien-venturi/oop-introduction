@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 class Article
 {
-    public int $id;
+    public int $idarticle;
     public string $title;
-    public ?string $description;
-    public ?string $publishDate;
-    public string $author;
+    public string $description;
+    public string $publishDate;
+    public string $authorName;
 
-    public function __construct(int $id, string $title, ?string $description, ?string $publishDate, string $author)
+
+    public function __construct(int $idarticle, string $title, string $description, string $publishDate, string $authorName)
     {
-        $this->id = $id;
+        $this->idarticle = $idarticle;
         $this->title = $title;
         $this->description = $description;
         $this->publishDate = $publishDate;
-        $this->author = $author;
+        $this->authorName = $authorName;
     }
 
     public function getPublishDateFormatted($format = 'd-m-Y'): ?string
@@ -40,12 +41,12 @@ class Article
         return $formattedDate;
     }
 
-    public function getPublishDate(): ?string
+    public function getPublishDate(): string
     {
         return $this->getPublishDateFormatted();
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -56,10 +57,10 @@ class Article
     }
     public function getId(): int
     {
-        return $this->id;
+        return $this->idarticle;
     }
     public function getAuthor(): string
     {
-        return $this->author;
+        return $this->authorName;
     }
 }
